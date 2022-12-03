@@ -3,8 +3,7 @@
   margin: 0;
   padding: 0;
 }
-.body {
-}
+
 .header {
   background-color: rgb(14, 14, 15);
   display: flex;
@@ -72,6 +71,8 @@
 .container__inbox {
   display: flex;
   flex-direction: row;
+  background-color: #696969;
+  text-align: center;
 }
 @media (min-width: 960px) {
   .container__inbox {
@@ -79,7 +80,7 @@
     width: 50vh;
     height: 75vh;
     align-items: center;
-    background-color: #c4c4c4;
+    background-color: #898989;
   }
 }
 
@@ -90,6 +91,8 @@
 }
 
 .links {
+  background-color: #c9c9c9;
+  border: solid 1px;
   text-decoration: none;
   height: 10vh;
   width: 50%;
@@ -98,8 +101,6 @@
 @media (min-width: 960px) {
   .links {
     margin: 2vh auto;
+    border: solid 1px #69696900;
   }
-}
-
-.conteiner__temple {
 }

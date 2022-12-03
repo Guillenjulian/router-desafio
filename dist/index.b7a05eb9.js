@@ -554,7 +554,7 @@ function findAndProccesLink(contenedor = document) {
 (function main() {
     // findAndProccesLink();
     const elemente = document.querySelector(".links");
-    console.log(elemente, "elemento funcion main");
+    //console.log(elemente, "elemento funcion main");
     elemente.addEventListener("click", ()=>goTo("/inbox"));
     elemente.addEventListener("click", ()=>goTo("/sent"));
     window.addEventListener("load", ()=>{
@@ -570,26 +570,24 @@ var _main = require("./main");
 var _inbox = require("./componet/inbox/inbox");
 var _send = require("./componet/send/send");
 function handleRoute(route) {
-    const containeEl = document.querySelector(".container");
+    const containeEl = document.querySelector(".contenedor");
     console.log("funcion del handler", route, containeEl);
     const routes = [
         {
             path: /\/sent/,
-            handler: ()=>(0, _send.sentCreateComp)
+            handler: (0, _send.sentCreateComp)
         },
         {
             path: /\/inbox/,
-            handler: ()=>(0, _inbox.inboxCreateComp)
+            handler: (0, _inbox.inboxCreateComp)
         }
     ];
     for (const r of routes)if (r.path.test(route)) {
         const el = r.handler();
-        console.log(el, "router log");
-        const containeEl1 = document.querySelector(".contenedor");
-        if (containeEl1?.firstChild) {
-            containeEl1.firstChild.remove();
-            containeEl1?.appendChild(el);
-        }
+        console.log(el, "router log", r);
+        const containeEl1 = document.querySelector(".container");
+        if (containeEl1?.firstChild) containeEl1.firstChild.remove();
+        containeEl1?.appendChild(el);
         (0, _main.findAndProccesLink)(el);
     }
 }
@@ -598,14 +596,22 @@ function handleRoute(route) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "inboxCreateComp", ()=>inboxCreateComp);
+var _inboxCss = require("./inbox.css");
 function inboxCreateComp() {
     const inboxEl = document.createElement("div");
     inboxEl.innerHTML = ` 
-    <h1>hola</h1> `;
+  <div class="containe__inbox">
+  <h1 class="prueba2">HOLA soy inbox</h1>
+  <ul>
+    <li><a href="/inbox/prueba1">prueba 1</a></li>
+    <li><a href="/inbox/prueba2">prueba 2</a></li>
+    <li><a href="/inbox/prueba3">prueba 3</a></li>
+  </ul>
+  </div> `;
     return inboxEl;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./inbox.css":"g1U7D"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -635,17 +641,28 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"8tvJp":[function(require,module,exports) {
+},{}],"g1U7D":[function() {},{}],"8tvJp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "sentCreateComp", ()=>sentCreateComp);
+var _sendCss = require("./send.css");
 function sentCreateComp() {
     const inboxEl = document.createElement("div");
     inboxEl.innerHTML = ` 
-    <h1>hola</h1> `;
+  <div class="container__sent">
+
+  
+  <h1 class="prueba2">HOLA soy Sent</h1>
+  <ul>
+  <li><a href="/inbox/prueba1">prueba 1</a></li>
+  <li><a href="/inbox/prueba2">prueba 2</a></li>
+  <li><a href="/inbox/prueba3">prueba 3</a></li>
+  </ul> 
+  </div>
+   `;
     return inboxEl;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["84Rv8","jeorp"], "jeorp", "parcelRequired917")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./send.css":"iiWuf"}],"iiWuf":[function() {},{}]},["84Rv8","jeorp"], "jeorp", "parcelRequired917")
 
 //# sourceMappingURL=index.b7a05eb9.js.map

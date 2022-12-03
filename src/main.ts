@@ -24,7 +24,7 @@ export function findAndProccesLink(contenedor: any = document) {
   // findAndProccesLink();
 
   const elemente = document.querySelector(".links") as HTMLAnchorElement;
-  console.log(elemente, "elemento funcion main");
+  //console.log(elemente, "elemento funcion main");
 
   elemente.addEventListener("click", () => goTo("/inbox"));
   elemente.addEventListener("click", () => goTo("/sent"));
