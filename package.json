@@ -1,0 +1,16 @@
+{
+  "name": "router-desafio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Guillenjulian/router-desafio.git",
+  "author": "Guillen Julian <guillen.julian1985@gmail.com>",
+  "license": "MIT",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  }
+}
